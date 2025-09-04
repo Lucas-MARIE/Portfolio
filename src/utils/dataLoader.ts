@@ -15,7 +15,7 @@ export interface Stats {
   projects: number;
   experiences: number;
   technologies: number;
-  studyYears: number;
+  studyYears: string;
 }
 
 export interface Competence {

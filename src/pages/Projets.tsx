@@ -231,15 +231,15 @@ const Projets: React.FC = () => {
   const projets: Projet[] = [
     {
       id: 1,
-      title: 'Application de Gestion de Bibliothèque',
-      description: 'Développement d\'une application complète de gestion de bibliothèque avec interface utilisateur moderne et système de gestion des emprunts.',
-      duration: '8 semaines',
+      title: 'Enquête sur les alumni',
+      description: "Un point de vigilance a récemment été émis par le Haut Conseil de l'Évaluation de la Recherche et de l'Enseignement Supérieur (HCÉRES), chargé d’évaluer les formations, concernant le devenir des étudiants diplômés de l’Institut Universitaire de Technologie (IUT) de Villetaneuse (93). À cet effet, afin de pouvoir aider les chefs de départements et les directeurs de formations dans cette tâche, il nous a été demandé de mener une enquête sur les poursuites d’études et les insertions professionnelles des diplômés.",
+      duration: '3 semaines',
       team: '4 étudiants',
       objectives: [
-        'Créer une interface utilisateur intuitive',
-        'Implémenter un système de gestion des livres',
-        'Développer un module d\'authentification',
-        'Optimiser les performances de l\'application'
+        'Interview des chefs de départements',
+        'Création d\'un questionnaire',
+        'Analyse des données récoltées',
+        'Réalisation d\'un rapport final'
       ],
       tasks: [
         'Analyse des besoins et conception UML',
@@ -249,106 +249,94 @@ const Projets: React.FC = () => {
         'Tests unitaires et d\'intégration'
       ],
       deliverables: [
-        'Application web fonctionnelle',
-        'Documentation technique complète',
-        'Guide utilisateur',
-        'Rapport de tests'
+        'Questionnaire',
+        'Rapport d\'interview',
       ],
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Express', 'JWT', 'Jest'],
-      competences: ['Réaliser', 'Gérer', 'Collaborer'],
-      githubUrl: 'https://github.com/example/bibliotheque',
-      demoUrl: 'https://bibliotheque-demo.herokuapp.com',
+      technologies: ['Word'],
+      competences: ['Réaliser', 'Gérer', 'Collaborer', 'Conduire'],
+      demoUrl: '../assets/CR.pdf',
       status: 'completed'
     },
     {
       id: 2,
-      title: 'Système de Monitoring Réseau',
-      description: 'Développement d\'un outil de surveillance réseau en temps réel avec alertes automatisées et tableaux de bord.',
+      title: 'Revue de littérature automatisée',
+      description: "Ce projet, proposé dans le cadre du cours « Management des Systèmes d’Information » en partenariat avec THALES, vise à apporter des éléments de réponses à la question « les systèmes d’identité influencent-ils certains facteurs de développement dans les pays en voie de développement ».",
       duration: '6 semaines',
-      team: '3 étudiants',
+      team: '4 étudiants',
       objectives: [
-        'Surveiller les équipements réseau en temps réel',
-        'Générer des alertes automatiques',
-        'Créer des rapports de performance',
-        'Implémenter une interface de configuration'
+        'créer un outil automatisé de recherche et d’analyse de documents scientifiques',
+        'utiliser des techniques de web scraping pour collecter les données',
+        'appliquer le traitement du langage naturel (NLP) pour analyser les textes',
+        'générer des résumés et extraire la méthodologie des études'
       ],
       tasks: [
-        'Étude des protocoles SNMP',
-        'Développement du moteur de surveillance',
-        'Création des tableaux de bord',
-        'Système d\'alertes par email',
-        'Tests de charge et optimisation'
+        'Tableau de bord Klaxoon',
+        'Configuration de l\'environnement de développement',
+        'Collecte des articles scientifiques API semanticscholar.org',
+        'Nettoyage et prétraitement des données textuelles',
+        'Analyse LLM et affichage des résultats',
       ],
       deliverables: [
-        'Application de monitoring',
-        'Documentation d\'installation',
-        'Manuel administrateur',
-        'Scripts de déploiement'
+        'Tableur de collecte des articles',
+        'Rapport d\'analyse',
+        'Soutenance orale',
       ],
-      technologies: ['Python', 'Flask', 'SQLite', 'SNMP', 'Chart.js', 'Docker'],
-      competences: ['Administrer', 'Optimiser', 'Réaliser'],
-      githubUrl: 'https://github.com/example/network-monitor',
+      technologies: ['Python', 'OpenAi', 'Pandas', 'BeautifulSoup'],
+      competences: ['Réaliser', 'Gérer', 'Optimiser', 'Collaborer', 'Conduire'],
+      githubUrl: 'https://github.com/Lucas-MARIE/MSI_THALES_GROUPE6',
       status: 'completed'
     },
     {
       id: 3,
-      title: 'Application Mobile de Gestion de Tâches',
-      description: 'Création d\'une application mobile cross-platform pour la gestion collaborative de tâches avec synchronisation cloud.',
-      duration: '10 semaines',
-      team: '5 étudiants',
+      title: 'Nuit de l\'info 2024',
+      description: "'Le plus fun serious-game regroupant des milliers d’étudiants pour développer une application informatique en une nuit'. Chef d'équipe d'un groupe de 14 étudiant, nous avons eu une nuit pour répondre à 5 défis aux choix et un imposé. Cette aventure m'a permis de faire le point sur les compétences les plus importantes à développer pour mener à bien un projet collectif : la communication, l'analyse du sujet, la planification et la répartition des tâches, la souplesse d'esprit et le fait de s'amuser !",
+      duration: '16h',
+      team: '14 étudiants',
       objectives: [
-        'Développer une app mobile intuitive',
-        'Implémenter la synchronisation temps réel',
-        'Créer un système de notifications',
-        'Assurer la sécurité des données'
+        'Faire un site web répondant à une problématique "Le corps et l\'océan',
+        'S\'amuser',
+        'Travailler en équipe',
       ],
       tasks: [
-        'Prototypage et design UX/UI',
-        'Développement en React Native',
-        'API backend avec authentification',
-        'Intégration Firebase pour sync',
-        'Tests sur différents appareils'
+        'Analyse du sujet et brainstorming',
+        'Planification et répartition des tâches',
+        'Développement frontend et déploiement',
+        'Interview avec les médias',
       ],
       deliverables: [
-        'Application Android et iOS',
-        'API backend documentée',
-        'Guide de déploiement',
-        'Plan de tests complet'
+        'Site web pas vraiment fonctionnel en si peu de temps ...',
+        'Petits défis annexes',
       ],
-      technologies: ['React Native', 'Node.js', 'Firebase', 'Redux', 'Express', 'MongoDB'],
-      competences: ['Réaliser', 'Collaborer', 'Conduire'],
-      githubUrl: 'https://github.com/example/task-manager',
-      demoUrl: 'https://task-manager-demo.netlify.com',
-      status: 'in-progress'
+      technologies: ['HTML', 'CSS', 'Java Script', 'Git hub'],
+      competences: ['Réaliser', 'Gérer', 'Conduire', 'Collaborer'],
+      githubUrl: 'https://github.com/Lucas-MARIE/cookie-cauchemar',
+      demoUrl: 'https://www.nuitdelinfo.com',
+      status: 'completed'
     },
     {
       id: 4,
-      title: 'Plateforme E-learning Interactive',
-      description: 'Développement d\'une plateforme d\'apprentissage en ligne avec système de quiz, suivi de progression et chat en temps réel.',
-      duration: '12 semaines',
-      team: '6 étudiants',
+      title: 'Prominder - Outil pédagogique d\'EPS',
+      description: "Prominder est un outil d'aide à l'observation de match de badminton. Les enseignants peuvent enregistrer leurs classes d'élèves, les modifier ou les supprimer de façon sécurisée (mot de passe à la création de la 1ère classe) Les élèves peuvent observer leurs camarades créant ainsi un profil en fonction des coups joués en cliquant dans un graphique dynamique (smash, dégagé, amortie...). Les élèves et les enseignants peuvent consulter les profils des autres élèves auxquels sont associés des conseils stratégiques et tactiques. L'enseignant peut consulter les annexes qui contiennent les informations de tous les types de profils.",
+      duration: '8 semaines',
+      team: '2 étudiants',
       objectives: [
-        'Créer une plateforme d\'apprentissage complète',
-        'Implémenter un système de gamification',
-        'Développer des outils d\'interaction',
-        'Optimiser l\'expérience utilisateur'
+        'Gamification de l\'observation des match de badminton',
+        'Ressources pédagogiques pour les enseignants et les élèves',
+        'Interface intuitive et adaptée',
       ],
       tasks: [
-        'Architecture microservices',
-        'Développement frontend modulaire',
-        'Système de gestion de contenu',
-        'Intégration vidéo et quiz interactifs',
-        'Tests d\'accessibilité et performance'
+        'Conception d\'une application excel',
+        'Observation de matchs pour tester l\'outil',
+        'Conseils interractifs adaptés en fonction du résultat',
       ],
       deliverables: [
-        'Plateforme web complète',
-        'Panel d\'administration',
-        'Documentation utilisateur',
-        'Rapport d\'audit sécurité'
+        'Application Excel fonctionnelle',
+        'Soutenance orale',
+        'Documentation spécialisée en badminton',
       ],
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Redis', 'WebRTC', 'Docker'],
-      competences: ['Réaliser', 'Gérer', 'Optimiser', 'Collaborer'],
-      githubUrl: 'https://github.com/example/elearning',
+      technologies: ['Excel', 'VBA'],
+      competences: ['Réaliser', 'Gérer', 'Collaborer', 'Conduire'],
+      githubUrl: 'https://github.com/Lucas-MARIE/Prominder-badminton-EPS-TICE',
       status: 'completed'
     }
   ];

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
 
 const CompetencesContainer = styled.div`
   max-width: 1200px;
@@ -20,6 +21,7 @@ const CompetenceCard = styled.div`
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
 
   &:hover {
     transform: translateY(-5px);
@@ -32,6 +34,10 @@ const CompetenceHeader = styled.div<{ $color: string }>`
   color: white;
   padding: 2rem;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -57,8 +63,78 @@ const CompetenceSubtitle = styled.p`
   margin: 0;
 `;
 
+const ToggleIcon = styled.div<{ $collapsed: boolean }>`
+  transform: rotate(${props => props.$collapsed ? '0deg' : '180deg'});
+  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+`;
+
 const CompetenceContent = styled.div`
   padding: 2rem;
+`;
+
+const TechnologiesList = styled.div<{ $origin?: 'iut' | 'stage' | 'personnel' }>`
+  background: ${props => 
+    props.$origin === 'iut' ? '#f0f4f8' : 
+    props.$origin === 'stage' ? '#e6f2e6' : 
+    props.$origin === 'personnel' ? '#fff0e6' : 
+    '#f8f9fa'};
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid ${props => 
+    props.$origin === 'iut' ? '#3498db' : 
+    props.$origin === 'stage' ? '#27ae60' : 
+    props.$origin === 'personnel' ? '#e67e22' : 
+    '#555'};
+  margin-bottom: 1rem;
+
+  h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        content: '✓';
+        color: ${props => 
+          props.$origin === 'iut' ? '#3498db' : 
+          props.$origin === 'stage' ? '#27ae60' : 
+          props.$origin === 'personnel' ? '#e67e22' : 
+          '#555'};
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+    }
+  }
+`;
+
+const OutilsSection = styled.div`
+  margin-bottom: 2rem;
+
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+`;
+
+const OutilsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 `;
 
 const NiveauSection = styled.div`
@@ -82,6 +158,9 @@ const NiveauIndicateur = styled.div<{ $level: number; $color: string }>`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  // Ensure default fallback color if not provided
+  color: ${props => props.$color || '#3498db'};
 `;
 
 const ProgressBar = styled.div<{ $level: number; $color: string }>`
@@ -113,57 +192,6 @@ const NiveauTexte = styled.span<{ $color: string }>`
   color: ${props => props.$color};
   font-weight: bold;
   font-size: 1rem;
-`;
-
-const OutilsSection = styled.div`
-  margin-bottom: 2rem;
-
-  h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
-`;
-
-const OutilsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-`;
-
-const OutilCategorie = styled.div`
-  background: #f8f9fa;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 4px solid #3498db;
-
-  h4 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      color: #555;
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-      position: relative;
-      padding-left: 1rem;
-
-      &::before {
-        content: '✓';
-        color: #27ae60;
-        position: absolute;
-        left: 0;
-        font-weight: bold;
-      }
-    }
-  }
 `;
 
 const ExperiencesSection = styled.div`
@@ -225,6 +253,9 @@ interface CompetenceData {
   subtitle: string;
   color: string;
   niveau: number;
+  itemsIUT?: string[];
+  itemsStage?: string[];
+  itemsPersonnel?: string[];
   outils: {
     categorie: string;
     items: string[];
@@ -237,6 +268,15 @@ interface CompetenceData {
 }
 
 const Competences: React.FC = () => {
+  const [collapsedState, setCollapsedState] = useState<{[key: string]: boolean}>({});
+
+  const toggleCollapse = (id: string) => {
+    setCollapsedState(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
   const competences: CompetenceData[] = [
     {
       id: 'realiser',
@@ -244,14 +284,17 @@ const Competences: React.FC = () => {
       subtitle: 'Développement d\'applications informatiques',
       color: '#3498db',
       niveau: 88,
+      itemsIUT: ['JavaScript', 'Java', 'HTML/CSS', 'PHP', 'VS Code', 'Git'],
+      itemsStage: ['TypeScript', 'React', 'Dotnet Core', 'esbuild', 'Postman'],
+      itemsPersonnel: [],
       outils: [
         {
           categorie: 'Langages de programmation',
-          items: ['JavaScript/TypeScript', 'Python', 'Java', 'C++', 'PHP']
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
           categorie: 'Frameworks Web',
-          items: ['React', 'Vue.js', 'Node.js', 'Express', 'Laravel']
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
           categorie: 'Outils de développement',
@@ -260,243 +303,268 @@ const Competences: React.FC = () => {
       ],
       experiences: [
         {
-          title: 'Application de Gestion de Bibliothèque',
-          description: 'Développement full-stack avec React et Node.js'
+          title: 'Portfolio Personnel',
+          description: 'Site web développé avec React et TypeScript'
         },
         {
-          title: 'Plateforme E-learning',
-          description: 'Création d\'interfaces utilisateur complexes en Vue.js'
-        },
-        {
-          title: 'Application Mobile de Tâches',
-          description: 'Développement cross-platform avec React Native'
+          title: 'Projets Universitaires',
+          description: 'Projets de site web avec base de donnée, et de scapping intelligent avec resumé générés par IA'
         }
       ],
-      autoEvaluation: 'Je maîtrise bien les technologies web modernes et suis capable de développer des applications complètes. Mon expérience en alternance m\'a permis d\'approfondir mes compétences en développement full-stack et d\'apprendre les bonnes pratiques industrielles.'
+      autoEvaluation: "C'est le genre de compétence qui s'acquiert avec la pratique et cette année de BUT m'a donné de nombreuses occasion de réaliser des projets concrets. Les enseignants se sont éfforcés de nous faire travailler autour de projets réèls ce qui m'a permis d'apprendre à développer une application web basique mais fonctionnelle. Mon stage de deux mois chez L'Oréal m'a donné un aperçu de la manière dont les applications sont développées en entreprise, et j'ai pu approfondir mes connaissances en React TypeScript et Dotnet Core. Selon moi, il ne nous a manqué que d'une vision 'bout en bout' du développement d'une application, de la conception à la mise en production, pour être pleinement opérationnel dans ce domaine."
     },
     {
       id: 'optimiser',
       title: 'Optimiser',
-      subtitle: 'Performance et qualité des solutions informatiques',
-      color: '#e74c3c',
-      niveau: 90,
+      subtitle: 'Performance et qualité du code',
+      color: '#80e4b2ff',
+      niveau: 88,
+      itemsIUT: ['Python', 'Algèbre', 'Cryptographie'],
+      itemsStage: ['SOnnarQube', 'MCP Context7', 'Normes REST', 'Principes SOLID'],
+      itemsPersonnel: [],
       outils: [
         {
-          categorie: 'Tests et qualité',
-          items: ['Jest', 'Cypress', 'SonarQube', 'ESLint', 'Prettier']
+          categorie: 'Langages de programmation',
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
-          categorie: 'Performance',
-          items: ['Lighthouse', 'WebPageTest', 'Chrome DevTools', 'New Relic']
+          categorie: 'Frameworks Web',
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
-          categorie: 'Optimisation base de données',
-          items: ['EXPLAIN ANALYZE', 'Indexation', 'Requêtes optimisées', 'Caching']
+          categorie: 'Outils de développement',
+          items: ['Git', 'VS Code', 'Docker', 'Postman', 'Jest']
         }
       ],
       experiences: [
         {
-          title: 'Optimisation Application Bibliothèque',
-          description: 'Amélioration des performances de 40% via optimisation des requêtes'
+          title: 'Revue de litérature automatisée',
+          description: 'Utilisation de Python pour le traitement de texte et l\'analyse de données'
         },
         {
-          title: 'Tests automatisés E-learning',
-          description: 'Mise en place d\'une suite de tests couvrant 85% du code'
-        }
+          title: 'Sondage sur les anciens élèves',
+          description: 'Création d\'un questionnaire et analyse des résultats avec Python, pandas et matplotlib'
+        },
       ],
-      autoEvaluation: 'J\'ai acquis une bonne compréhension des enjeux de performance et de qualité. Je sais utiliser les outils de profiling et mettre en place des tests automatisés, mais je souhaite approfondir mes connaissances en optimisation système.'
+      autoEvaluation: "L'étude des structures de données et de la complexité algorithmique m'a permis de mieux comprendre comment écrire du code efficace et maintenable. J'ai appris à utiliser des outils comme SonarQube pour analyser la qualité de mon code et identifier les points d'amélioration lors de mon stage. Une autre bonne pratique que j'ai mis en plalce est de lire du code de qualité et je trouve qu'on aurait pu y être d'avantage encouragé à l'IUT. Mention spécial tout de même pour le projet autour du jeu vidéo Balatro que nous devions reprogrammer, ce qui nous a donné une codebase à étudier."
     },
     {
       id: 'administrer',
       title: 'Administrer',
-      subtitle: 'Systèmes informatiques et réseaux',
-      color: '#f39c12',
-      niveau: 84,
+      subtitle: 'Systèmes et réseaux',
+      color: '#dbdd52ff',
+      niveau: 88,
+      itemsIUT: ['Bash'],
+      itemsStage: ['Kubernetes', 'Docker', 'Azure', 'CI/CD'],
+      itemsPersonnel: [],
       outils: [
         {
-          categorie: 'Systèmes d\'exploitation',
-          items: ['Linux (Ubuntu/CentOS)', 'Windows Server', 'PowerShell', 'Bash']
+          categorie: 'Langages de programmation',
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
-          categorie: 'Virtualisation et conteneurs',
-          items: ['Docker', 'VMware', 'VirtualBox', 'Docker Compose']
+          categorie: 'Frameworks Web',
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
-          categorie: 'Réseaux et sécurité',
-          items: ['TCP/IP', 'DNS', 'DHCP', 'Firewall', 'VPN']
+          categorie: 'Outils de développement',
+          items: ['Git', 'VS Code', 'Docker', 'Postman', 'Jest']
         }
       ],
       experiences: [
-        {
-          title: 'Support Technique PME',
-          description: 'Administration d\'un parc de 50+ postes sous Windows'
-        },
-        {
-          title: 'Système de Monitoring',
-          description: 'Déploiement d\'outils de surveillance réseau avec Docker'
-        }
       ],
-      autoEvaluation: 'Mes compétences en administration système se sont développées principalement lors de mon stage. Je maîtrise les bases mais souhaite approfondir les aspects sécurité et administration de serveurs de production.'
+      autoEvaluation: "La formation étant pluridisciplinaire, nous avons eu l'occasion d'aborder les bases de l'administration des systèmes et réseaux. Cependant, c'est la que le bas blesse car c'est selon moi la compétence la moins développée dans le cursus. Il m'a manqué une approche plus fondamentale et 'bas niveau' des systèmes d'exploitation et des réseaux pour vraiment comprendre comment tout cela fonctionne. J'ai du faire appel à toute l'aide disponible auprès de mes collègues et de mon tuteur de stage pour combler ces lacunes."
     },
     {
       id: 'gerer',
       title: 'Gérer',
       subtitle: 'Données et informations',
-      color: '#27ae60',
-      niveau: 85,
+      color: '#eb7e99ff',
+      niveau: 88,
+      itemsIUT: ['SQL', 'Statistiques', 'Probabilités', 'R', "Test d'hypothèse"],
+      itemsStage: ['CosmosDB', 'CI/CD'],
+      itemsPersonnel: [],
       outils: [
         {
-          categorie: 'Bases de données',
-          items: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite', 'Redis']
+          categorie: 'Langages de programmation',
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
-          categorie: 'Outils d\'analyse',
-          items: ['Python Pandas', 'Matplotlib', 'Power BI', 'Excel avancé']
+          categorie: 'Frameworks Web',
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
-          categorie: 'API et intégration',
-          items: ['REST API', 'GraphQL', 'JSON/XML', 'ETL processes']
+          categorie: 'Outils de développement',
+          items: ['Git', 'VS Code', 'Docker', 'Postman', 'Jest']
         }
       ],
       experiences: [
         {
-          title: 'Base de données Bibliothèque',
-          description: 'Conception et optimisation d\'une base de données relationnelle'
+          title: 'Analyse de données de sondage, et de revue de littérature',
+          description: 'Utilisation de R pour analyser et visualiser des résultats, idem avec pandas et matplotlib en Python'
         },
-        {
-          title: 'Analyse de données Lab',
-          description: 'Traitement et visualisation de données expérimentales'
-        }
       ],
-      autoEvaluation: 'J\'ai une bonne maîtrise des bases de données relationnelles et des outils d\'analyse de données. Mon expérience avec différents SGBD me permet de choisir la solution adaptée selon le contexte.'
+      autoEvaluation: "La gestion des données, et par conséquent l'analyse de ces données, est une compétence que j'ai particulièrement apprécié developper. Les bases théoriques apportées en probabilité et een algèbre m'ont permis d'atteindre un niveau de maitrise satisfaisant pour appréhender sereinement le monde des data sciences.",
     },
     {
       id: 'conduire',
       title: 'Conduire',
-      subtitle: 'Projets informatiques',
-      color: '#9b59b6',
-      niveau: 86,
+      subtitle: 'Projet informatique',
+      color: '#db6334ff',
+      niveau: 88,
+      itemsIUT: ['Klaxoon', 'UML', 'git hub'],
+      itemsStage: ['Agile', 'CI/CD'],
+      itemsPersonnel: ['Eisenhower Matrix'],
       outils: [
         {
-          categorie: 'Méthodologies',
-          items: ['Agile/Scrum', 'Kanban', 'Cycle en V', 'DevOps']
+          categorie: 'Langages de programmation',
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
-          categorie: 'Gestion de projet',
-          items: ['Jira', 'Trello', 'GitHub Projects', 'Gantt', 'Planning Poker']
+          categorie: 'Frameworks Web',
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
-          categorie: 'Documentation',
-          items: ['UML', 'Markdown', 'Confluence', 'GitBook', 'Figma']
+          categorie: 'Outils de développement',
+          items: ['Git', 'VS Code', 'Docker', 'Postman', 'Jest']
         }
       ],
       experiences: [
         {
-          title: 'Chef de projet Application Mobile',
-          description: 'Coordination d\'une équipe de 5 développeurs sur 10 semaines'
+          title: 'Gestion du temps et des priorités en multiprojet',
+          description: 'Répartition du temps entre les projets universitaires, le stage, et les projets personnels'
         },
-        {
-          title: 'Planning projet E-learning',
-          description: 'Gestion des sprints et coordination avec les parties prenantes'
-        }
       ],
-      autoEvaluation: 'J\'ai pris goût à la gestion de projet lors des SAÉ. Je sais organiser le travail d\'équipe et respecter les délais, mais je souhaite développer mes compétences en gestion des risques et communication client.'
+      autoEvaluation: "Cette année de reconversion a été intense mais j'ai pu équilibrer mon ryhtme d'étude avec mes projet personnels (sport et loisir). Le stage est arrivé au meilleur moment pour consolider mes apprentissages et ma conduite de projet à été sollicité à court terme lors des révisions pour le controle continue, à moyen terme pour les projet universitaires et à plus long terme en ayant l'opportunité d'avoir un stage qui lie ma 2eme et 3eme année entre elles. Mon point faibe étant l'anticipation j'ai choisi pour cette année 'passerlle' de suivre le conseil de mon professeur de maths : 'sois à fond tout le temps!'",
     },
+
     {
       id: 'collaborer',
       title: 'Collaborer',
-      subtitle: 'Travail en équipe et communication professionnelle',
-      color: '#e67e22',
-      niveau: 83,
+      subtitle: 'Travailler en équipe',
+      color: '#ac4ee2ff',
+      niveau: 88,
+      itemsIUT: ['git hub', 'Klaxoon', 'discord'],
+      itemsStage: ['Teams', 'Git lab'],
+      itemsPersonnel: [],
       outils: [
         {
-          categorie: 'Communication',
-          items: ['Klaxoon', 'Teams', 'Discord', 'agile']
+          categorie: 'Langages de programmation',
+          items: ['JavaScript', 'Java', 'HTML/CSS', 'PHP']
         },
         {
-          categorie: 'Collaboration code',
-          items: ['Git/GitHub', 'GitLab']
+          categorie: 'Frameworks Web',
+          items: ['React', 'Vue.js', 'Node.js']
         },
         {
-          categorie: 'Présentation',
-          items: ['PowerPoint', 'Canva', 'Prezi', 'Figma']
+          categorie: 'Outils de développement',
+          items: ['Git', 'VS Code', 'Docker', 'Postman', 'Jest']
         }
       ],
       experiences: [
         {
-          title: 'Équipes projets SAÉ',
-          description: 'Collaboration efficace dans toutes les équipes de 3-4 personnes'
+          title: 'Communication professionnelle',
+          description: 'Présentation orales en groupe et débat d\'idées en classe'
         },
         {
-          title: "Partage de l'information",
-          description: 'Communication technique adaptée aux non-informaticiens'
+          title: 'Cours interractif en anglais',
+          description: 'Travail en équipe autour de sujet d\'actualité dans le monde du numérique en anglais'
         },
         {
-          title: 'Présentations et soutenances',
-          description: 'Présentation de solutions techniques devant un jury'
-        }
+          title: 'Projets de groupe',
+          description: 'Plusieurs projets réalisés en équipe de 2 à 4 personnes.'
+        },
       ],
-      autoEvaluation: 'La collaboration est mon point fort. J\'aime travailler en équipe, partager mes connaissances et apprendre des autres. Ma capacité à vulgariser les concepts techniques me permet de bien communiquer avec tous les profils.'
-    }
+      autoEvaluation: "J'ai particulièrement aimé collaborer avec mes camarades aussi bien pour les projets universitaire que pour la vie de classe au quotidien. S'ajoutant aux nombreux cours pertinents quand il est question de communication, je me doit également de mentionner ici que la vie étudiante sur le campus renforce l'envie de s'investir collectivement dans un parcours de formation exigent. Le BDE et service des sports sont précieux à l'IUT de Villetaneuse et c'est logiquement que je m'y suis impliquer.",
+    },
   ];
 
   return (
     <CompetencesContainer>
       <PageTitle>Compétences BUT Informatique</PageTitle>
       
-      {competences.map((competence) => (
-        <CompetenceCard key={competence.id}>
-          <CompetenceHeader $color={competence.color}>
-            <CompetenceTitle>{competence.title}</CompetenceTitle>
-            <CompetenceSubtitle>{competence.subtitle}</CompetenceSubtitle>
-          </CompetenceHeader>
+      {competences.map((competence) => {
+        const isCollapsed = collapsedState[competence.id] ?? true;
+        return (
+          <CompetenceCard key={competence.id}>
+            <CompetenceHeader $color={competence.color || '#3498db'} onClick={() => toggleCollapse(competence.id)}>
+              <div>
+                <CompetenceTitle>{competence.title}</CompetenceTitle>
+                <CompetenceSubtitle>{competence.subtitle}</CompetenceSubtitle>
+              </div>
+              <ToggleIcon $collapsed={isCollapsed}>
+                ▼
+              </ToggleIcon>
+            </CompetenceHeader>
           
-          <CompetenceContent>
-            <NiveauSection>
-              <NiveauHeader>
-                <h3>Niveau d'acquisition</h3>
-                <NiveauIndicateur $level={competence.niveau} $color={competence.color}>
-                  <ProgressBar $level={competence.niveau} $color={competence.color} />
-                  <NiveauTexte $color={competence.color}>{competence.niveau}%</NiveauTexte>
-                </NiveauIndicateur>
-              </NiveauHeader>
-            </NiveauSection>
+          {!isCollapsed && (
+            <CompetenceContent>
+              <NiveauSection>
+                <NiveauHeader>
+                  <h3>Niveau d'acquisition</h3>
+                  <NiveauIndicateur $level={competence.niveau} $color={competence.color || '#3498db'}>
+                    <ProgressBar $level={competence.niveau} $color={competence.color || '#3498db'} />
+                    <NiveauTexte $color={competence.color || '#3498db'}>{competence.niveau}%</NiveauTexte>
+                  </NiveauIndicateur>
+                </NiveauHeader>
+              </NiveauSection>
 
-            <OutilsSection>
-              <h3>Outils et technologies maîtrisés</h3>
-              <OutilsGrid>
-                {competence.outils.map((categorie, index) => (
-                  <OutilCategorie key={index}>
-                    <h4>{categorie.categorie}</h4>
-                    <ul>
-                      {categorie.items.map((item, itemIndex) => (
-                        <li key={itemIndex}>{item}</li>
-                      ))}
-                    </ul>
-                  </OutilCategorie>
-                ))}
-              </OutilsGrid>
-            </OutilsSection>
+              <OutilsSection>
+                <h3>Outils et technologies maîtrisés</h3>
+                <OutilsGrid>
+                  {competence.itemsIUT && competence.itemsIUT.length > 0 && (
+                    <TechnologiesList $origin="iut">
+                      <h4>Technologies IUT</h4>
+                      <ul>
+                        {competence.itemsIUT.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </TechnologiesList>
+                  )}
+                  {competence.itemsStage && competence.itemsStage.length > 0 && (
+                    <TechnologiesList $origin="stage">
+                      <h4>Technologies Stage (L'Oréal)</h4>
+                      <ul>
+                        {competence.itemsStage.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </TechnologiesList>
+                  )}
+                  {competence.itemsPersonnel && competence.itemsPersonnel.length > 0 && (
+                    <TechnologiesList $origin="personnel">
+                      <h4>Technologies Personnelles</h4>
+                      <ul>
+                        {competence.itemsPersonnel.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </TechnologiesList>
+                  )}
+                </OutilsGrid>
+              </OutilsSection>
 
-            <ExperiencesSection>
-              <h3>Expériences et projets associés</h3>
-              <ExperiencesList>
-                {competence.experiences.map((experience, index) => (
-                  <ExperienceItem key={index}>
-                    <h4>{experience.title}</h4>
-                    <p>{experience.description}</p>
-                  </ExperienceItem>
-                ))}
-              </ExperiencesList>
-            </ExperiencesSection>
+              <ExperiencesSection>
+                <h3>Expériences et projets associés</h3>
+                <ExperiencesList>
+                  {competence.experiences.map((experience, index) => (
+                    <ExperienceItem key={index}>
+                      <h4>{experience.title}</h4>
+                      <p>{experience.description}</p>
+                    </ExperienceItem>
+                  ))}
+                </ExperiencesList>
+              </ExperiencesSection>
 
-            <AutoEvaluationSection>
-              <h3>Auto-évaluation</h3>
-              <p>{competence.autoEvaluation}</p>
-            </AutoEvaluationSection>
-          </CompetenceContent>
+              <AutoEvaluationSection>
+                <h3>Auto-évaluation</h3>
+                <p>{competence.autoEvaluation}</p>
+              </AutoEvaluationSection>
+            </CompetenceContent>
+          )}
         </CompetenceCard>
-      ))}
+      )})}
     </CompetencesContainer>
   );
 };

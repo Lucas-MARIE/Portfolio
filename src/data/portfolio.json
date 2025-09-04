@@ -13,7 +13,7 @@
     "projects": 4,
     "experiences": 3,
     "technologies": 8,
-    "studyYears": 2
+    "studyYears": "2 + 6"
   },
   "competences": [
     {
@@ -67,7 +67,7 @@
         "Communication professionnelle"
       ],
       "position": "right",
-      "logo": "../assets/logosFormation/universit_sorbonne_paris_nord_logo.jpg"
+      "logo": ""
     },
     {
       "year": "2014-2020",
@@ -82,7 +82,7 @@
         "Préparation physique et entraînement"
       ],
       "position": "left",
-      "logo": "../assets/logosFormation/universit_claude_bernard_lyon_1_logo.jpg"
+      "logo": ""
     },
     {
       "year": "2013-2014",
@@ -97,7 +97,7 @@
         "Travail en équipe et gestion du temps"
       ],
       "position": "right",
-      "logo": "../assets/logosFormation/cpge_lyce_vauvenargues_logo.jpg"
+      "logo": ""
     }
   ],
   "justificationBUT": {

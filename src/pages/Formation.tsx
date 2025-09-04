@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getFormations, getJustificationBUT } from '../utils/dataLoader';
+import logoformationUniv from '../assets/logosFormation/universit_sorbonne_paris_nord_logo.jpg';
+import logoStaps from '../assets/logosFormation/universit_claude_bernard_lyon_1_logo.jpg';
+import logoPrepa from '../assets/logosFormation/cpge_lyce_vauvenargues_logo.jpg';
+
 
 const FormationContainer = styled.div`
   max-width: 1200px;
@@ -194,45 +198,48 @@ const JustificationText = styled.p`
   max-width: 800px;
   margin: 0 auto;
 `;
+const logoMap = {
+    'Université Sorbonne Paris Nord - IUT de Villetaneuse': logoformationUniv,
+    'Université Claude Bernard Lyon 1': logoStaps,
+    'Lycée Vauvenargues, Aix-en-Provence': logoPrepa
+  };
 
-const Formation: React.FC = () => {
-  const formations = getFormations();
-  const justification = getJustificationBUT();
+  const getFormationLogo = (school: string) => {
+    return logoMap[school as keyof typeof logoMap] || '';
+  };
 
-  return (
-    <FormationContainer>
-      <PageTitle>Parcours de Formation</PageTitle>
-      
-      <Timeline>
-        {formations.map((formation, index) => (
-          <TimelineItem key={index} $isLeft={formation.position === 'left'}>
-            <TimelineYear>{formation.year}</TimelineYear>
-            <TimelineDot />
-            <TimelineContent $isLeft={formation.position === 'left'}>
-              <FormationLogo src={formation.logo} alt={`${formation.school} logo`} />
-              <FormationTitle>{formation.title}</FormationTitle>
-              <FormationSchool>{formation.school}</FormationSchool>
-              <FormationDescription>{formation.description}</FormationDescription>
-              <FormationDetails>
-                {formation.details.map((detail, detailIndex) => (
-                  <li key={detailIndex}>{detail}</li>
-                ))}
-              </FormationDetails>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+  const Formation: React.FC = () => {
+    const formations = getFormations();
+    const justification = getJustificationBUT();
 
-      <JustificationSection>
-        <JustificationTitle>{justification.title}</JustificationTitle>
-        {justification.content.map((paragraph, index) => (
-          <JustificationText key={index}>
-            {paragraph}
-          </JustificationText>
-        ))}
-      </JustificationSection>
-    </FormationContainer>
-  );
-};
+    return (
+      <FormationContainer>
+        <PageTitle>Parcours de Formation</PageTitle>
+
+        <Timeline>
+          {formations.map((formation, index) => (
+            <TimelineItem key={index} $isLeft={formation.position === 'left'}>
+              <TimelineYear>{formation.year}</TimelineYear>
+              <TimelineDot />
+              <TimelineContent $isLeft={formation.position === 'left'}>
+                <FormationLogo
+                  src={getFormationLogo(formation.school)}
+                  alt={`${formation.school} logo`}
+                />
+                <FormationTitle>{formation.title}</FormationTitle>
+                <FormationSchool>{formation.school}</FormationSchool>
+                <FormationDescription>{formation.description}</FormationDescription>
+                <FormationDetails>
+                  {formation.details.map((detail, detailIndex) => (
+                    <li key={detailIndex}>{detail}</li>
+                  ))}
+                </FormationDetails>
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </FormationContainer>
+    );
+  };
 
 export default Formation;
