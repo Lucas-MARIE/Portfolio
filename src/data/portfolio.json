@@ -1,0 +1,113 @@
+{
+  "profile": {
+    "name": "Lucas MARIE",
+    "title": "Étudiant BUT Informatique 3 ème année",
+    "description": "Etudiant en 3 ème année de BUT informatique à l'IUT de villetaneuse, je me passionne pour les sujet en lien avec l'IA.",
+    "location": "Nogent-Sur-Marne, île-de-France",
+    "email": "lucasmariepro1@gmail.com",
+    "phone": "+33 6 84 16 64 56",
+    "github": "https://github.com/lucas-MARIE",
+    "linkedin": "https://www.linkedin.com/in/lucas-marie-60bbb3346"
+  },
+  "stats": {
+    "projects": 4,
+    "experiences": 3,
+    "technologies": 8,
+    "studyYears": 2
+  },
+  "competences": [
+    {
+      "name": "Réaliser",
+      "description": "Développement d'applications informatiques",
+      "level": 88,
+      "color": "#3498db"
+    },
+    {
+      "name": "Optimiser",
+      "description": "Performance et qualité des solutions",
+      "level": 90,
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Administrer",
+      "description": "Systèmes informatiques et réseaux",
+      "level": 84,
+      "color": "#f39c12"
+    },
+    {
+      "name": "Gérer",
+      "description": "Données et informations",
+      "level": 85,
+      "color": "#27ae60"
+    },
+    {
+      "name": "Conduire",
+      "description": "Projets informatiques",
+      "level": 86,
+      "color": "#9b59b6"
+    },
+    {
+      "name": "Collaborer",
+      "description": "Au sein d’une équipe informatique",
+      "level": 83,
+      "color": "#e67e22"
+    }
+  ],
+  "formations": [
+    {
+      "year": "2024-2026",
+      "title": "BUT Informatique - Parcours Passerelle",
+      "school": "Université Sorbonne Paris Nord - IUT de Villetaneuse",
+      "description": "Formation pluridisciplinaire et professionalisante en informatique, axée sur le développement logiciel et les sciences des données.",
+      "details": [
+        "Développement web frontend et backend",
+        "Gestion de bases de données",
+        "Administration système et réseau",
+        "Gestion de projet agile",
+        "Communication professionnelle"
+      ],
+      "position": "right",
+      "logo": "../assets/logosFormation/universit_sorbonne_paris_nord_logo.jpg"
+    },
+    {
+      "year": "2014-2020",
+      "title": "Master 2 Enseignement d'éducation physique et d'entraînement",
+      "school": "Université Claude Bernard Lyon 1",
+      "description": "Formation d'enseignant d'EPS spécialité badminton",
+      "details": [
+        "Pédagogie et didactique de l'EPS",
+        "Sciences du mouvement humain",
+        "Psychologie de l'apprentissage",
+        "Organisation et gestion des activités sportives",
+        "Préparation physique et entraînement"
+      ],
+      "position": "left",
+      "logo": "../assets/logosFormation/universit_claude_bernard_lyon_1_logo.jpg"
+    },
+    {
+      "year": "2013-2014",
+      "title": "CPGE - PTSI",
+      "school": "Lycée Vauvenargues, Aix-en-Provence",
+      "description": "Classe préparatoire aux grandes écoles, filière PTSI (Physique, Technologie et Sciences de l'Ingénieur).",
+      "details": [
+        "Mathématiques avancées",
+        "Physique appliquée",
+        "Sciences de l'ingénieur",
+        "Informatique de base",
+        "Travail en équipe et gestion du temps"
+      ],
+      "position": "right",
+      "logo": "../assets/logosFormation/cpge_lyce_vauvenargues_logo.jpg"
+    }
+  ],
+  "justificationBUT": {
+    "title": "Pourquoi le BUT Passerelle ?",
+    "content": [
+      "Après des étude d'enseignant d'EPS et une expérience de musicien professionnel, ",
+      "Cette formation m'a permi d'acquérir des compétences solides en développement d'applications, en analyse de données,",
+      "et de façon plus générale un socle pluridisciplinaire (anglais technique, droit du numérique, communication...) propice à une bonne insertion en milieu professionel.",
+      "En adoptant une approche méthodologique rigoureuse héritée de ma formation initiale j'ai pu tirer un maximum de profit de cette réorientation.",
+      "Enfin, le stage de fin d'année m'a donné l'opportunité d'approfondir mes connaissances dans une entreprise de renom!"
+    ]
+  }
+}
