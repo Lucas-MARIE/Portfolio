@@ -254,7 +254,7 @@ const Projets: React.FC = () => {
       ],
       technologies: ['Word'],
       competences: ['Réaliser', 'Gérer', 'Collaborer', 'Conduire'],
-      demoUrl: '/CR.pdf',
+      demoUrl: '/Portfolio/CR.pdf',
       status: 'completed'
     },
     {
