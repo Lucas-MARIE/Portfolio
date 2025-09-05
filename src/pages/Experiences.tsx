@@ -262,7 +262,7 @@ const experiences = [
           'Communication avec les personnes ressources'
         ]
       },
-      technologies: ['React', 'Doetnet.js', 'TypeScript', 'CosmosDB', 'Git']
+      technologies: ['React', 'Dotnet Core', 'TypeScript', 'CosmosDB', 'Git', 'SonarQube', 'Semantic search']
     },
     {
       title: 'Musicien professionnel',
@@ -275,7 +275,7 @@ const experiences = [
           'Improvisation et composition musicale',
           'Organisation d\'événements musicaux'
         ],
-        context: 'Volonté de dépassé ma pratique réguilière et de m\'embarquer dans une expérience professionnelle passionnate.'
+        context: 'Volonté de dépassé ma pratique réguilière de la batterie et des percussions pour m\'embarquer dans une expérience professionnelle passionnate.'
       },
       competences: [],
       autoEvaluation: {

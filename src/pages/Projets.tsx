@@ -254,7 +254,7 @@ const Projets: React.FC = () => {
       ],
       technologies: ['Word'],
       competences: ['Réaliser', 'Gérer', 'Collaborer', 'Conduire'],
-      demoUrl: '../assets/CR.pdf',
+      demoUrl: '/CR.pdf',
       status: 'completed'
     },
     {
@@ -293,7 +293,7 @@ const Projets: React.FC = () => {
       duration: '16h',
       team: '14 étudiants',
       objectives: [
-        'Faire un site web répondant à une problématique "Le corps et l\'océan',
+        'Faire un site web répondant à une problématique : "Le corps et l\'océan"',
         'S\'amuser',
         'Travailler en équipe',
       ],
@@ -304,7 +304,7 @@ const Projets: React.FC = () => {
         'Interview avec les médias',
       ],
       deliverables: [
-        'Site web pas vraiment fonctionnel en si peu de temps ...',
+        'Site web (pas vraiment fonctionnel en si peu de temps ...)',
         'Petits défis annexes',
       ],
       technologies: ['HTML', 'CSS', 'Java Script', 'Git hub'],

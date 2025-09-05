@@ -311,7 +311,7 @@ const Competences: React.FC = () => {
           description: 'Projets de site web avec base de donnée, et de scapping intelligent avec resumé générés par IA'
         }
       ],
-      autoEvaluation: "C'est le genre de compétence qui s'acquiert avec la pratique et cette année de BUT m'a donné de nombreuses occasion de réaliser des projets concrets. Les enseignants se sont éfforcés de nous faire travailler autour de projets réèls ce qui m'a permis d'apprendre à développer une application web basique mais fonctionnelle. Mon stage de deux mois chez L'Oréal m'a donné un aperçu de la manière dont les applications sont développées en entreprise, et j'ai pu approfondir mes connaissances en React TypeScript et Dotnet Core. Selon moi, il ne nous a manqué que d'une vision 'bout en bout' du développement d'une application, de la conception à la mise en production, pour être pleinement opérationnel dans ce domaine."
+      autoEvaluation: "C'est le genre de compétence qui s'acquiert avec la pratique, et cette année de BUT m'a donné de nombreuses occasions de réaliser des projets concrets. Les enseignants se sont efforcés de nous faire travailler autour de projets réels, ce qui m'a permis d'apprendre à développer une application web basique mais fonctionnelle. Mon stage de deux mois chez L'Oréal m'a donné un aperçu de la manière dont les applications sont développées en entreprise, et j'ai pu approfondir mes connaissances en React, TypeScript et .NET Core. Selon moi, il ne nous a manqué qu'une vision « bout en bout » du développement d'une application, de la conception à la mise en production, pour être pleinement opérationnels dans ce domaine."
     },
     {
       id: 'optimiser',
@@ -346,7 +346,7 @@ const Competences: React.FC = () => {
           description: 'Création d\'un questionnaire et analyse des résultats avec Python, pandas et matplotlib'
         },
       ],
-      autoEvaluation: "L'étude des structures de données et de la complexité algorithmique m'a permis de mieux comprendre comment écrire du code efficace et maintenable. J'ai appris à utiliser des outils comme SonarQube pour analyser la qualité de mon code et identifier les points d'amélioration lors de mon stage. Une autre bonne pratique que j'ai mis en plalce est de lire du code de qualité et je trouve qu'on aurait pu y être d'avantage encouragé à l'IUT. Mention spécial tout de même pour le projet autour du jeu vidéo Balatro que nous devions reprogrammer, ce qui nous a donné une codebase à étudier."
+      autoEvaluation: "L'étude des structures de données et de la complexité algorithmique m'a permis de mieux comprendre comment écrire du code efficace et maintenable. J'ai appris à utiliser des outils comme SonarQube pour analyser la qualité de mon code et identifier les points d'amélioration lors de mon stage. Une autre bonne pratique que j'ai mise en place est de lire du code de qualité, et je trouve qu'on aurait pu y être davantage encouragés à l'IUT. Mention spéciale tout de même pour le projet autour du jeu vidéo Balatro, que nous devions reprogrammer, ce qui nous a donné une base de code à étudier."
     },
     {
       id: 'administrer',
@@ -373,7 +373,7 @@ const Competences: React.FC = () => {
       ],
       experiences: [
       ],
-      autoEvaluation: "La formation étant pluridisciplinaire, nous avons eu l'occasion d'aborder les bases de l'administration des systèmes et réseaux. Cependant, c'est la que le bas blesse car c'est selon moi la compétence la moins développée dans le cursus. Il m'a manqué une approche plus fondamentale et 'bas niveau' des systèmes d'exploitation et des réseaux pour vraiment comprendre comment tout cela fonctionne. J'ai du faire appel à toute l'aide disponible auprès de mes collègues et de mon tuteur de stage pour combler ces lacunes."
+      autoEvaluation: "La formation étant pluridisciplinaire, nous avons eu l'occasion d'aborder les bases de l'administration des systèmes et réseaux. Cependant, c'est là que le bât blesse, car selon moi c'est la compétence la moins développée dans le cursus. Il m'a manqué une approche plus fondamentale et « bas niveau » des systèmes d'exploitation et des réseaux pour vraiment comprendre comment tout cela fonctionne. J'ai dû faire appel à toute l'aide disponible auprès de mes collègues et de mon tuteur de stage pour combler ces lacunes."
     },
     {
       id: 'gerer',
@@ -404,7 +404,7 @@ const Competences: React.FC = () => {
           description: 'Utilisation de R pour analyser et visualiser des résultats, idem avec pandas et matplotlib en Python'
         },
       ],
-      autoEvaluation: "La gestion des données, et par conséquent l'analyse de ces données, est une compétence que j'ai particulièrement apprécié developper. Les bases théoriques apportées en probabilité et een algèbre m'ont permis d'atteindre un niveau de maitrise satisfaisant pour appréhender sereinement le monde des data sciences.",
+      autoEvaluation: "La gestion des données, et par conséquent l'analyse de ces données, est une compétence que j'ai particulièrement appréciée développer. Les bases théoriques apportées en probabilité et en algèbre m'ont permis d'atteindre un niveau de maîtrise satisfaisant pour appréhender sereinement le monde de la data science.",
     },
     {
       id: 'conduire',
@@ -435,7 +435,7 @@ const Competences: React.FC = () => {
           description: 'Répartition du temps entre les projets universitaires, le stage, et les projets personnels'
         },
       ],
-      autoEvaluation: "Cette année de reconversion a été intense mais j'ai pu équilibrer mon ryhtme d'étude avec mes projet personnels (sport et loisir). Le stage est arrivé au meilleur moment pour consolider mes apprentissages et ma conduite de projet à été sollicité à court terme lors des révisions pour le controle continue, à moyen terme pour les projet universitaires et à plus long terme en ayant l'opportunité d'avoir un stage qui lie ma 2eme et 3eme année entre elles. Mon point faibe étant l'anticipation j'ai choisi pour cette année 'passerlle' de suivre le conseil de mon professeur de maths : 'sois à fond tout le temps!'",
+      autoEvaluation: "Cette année de reconversion a été intense, mais j'ai pu équilibrer mon rythme d'étude avec mes projets personnels (sport et loisirs). Le stage est arrivé au meilleur moment pour consolider mes apprentissages, et ma conduite de projet a été sollicitée à court terme lors des révisions pour le contrôle continu, à moyen terme pour les projets universitaires, et à plus long terme en ayant l'opportunité d'effectuer un stage qui lie ma 2ᵉ et 3ᵉ année entre elles. Mon point faible étant l'anticipation, j'ai choisi pour cette année « passerelle » de suivre le conseil de mon professeur de maths : « sois à fond tout le temps ! »",
     },
 
     {
@@ -475,7 +475,7 @@ const Competences: React.FC = () => {
           description: 'Plusieurs projets réalisés en équipe de 2 à 4 personnes.'
         },
       ],
-      autoEvaluation: "J'ai particulièrement aimé collaborer avec mes camarades aussi bien pour les projets universitaire que pour la vie de classe au quotidien. S'ajoutant aux nombreux cours pertinents quand il est question de communication, je me doit également de mentionner ici que la vie étudiante sur le campus renforce l'envie de s'investir collectivement dans un parcours de formation exigent. Le BDE et service des sports sont précieux à l'IUT de Villetaneuse et c'est logiquement que je m'y suis impliquer.",
+      autoEvaluation: "J'ai particulièrement aimé collaborer avec mes camarades, aussi bien pour les projets universitaires que pour la vie de classe au quotidien. S'ajoutant aux nombreux cours pertinents, notamment en communication, je me dois également de mentionner ici que la vie étudiante sur le campus renforce l'envie de s'investir collectivement dans un parcours de formation exigeant. Le BDE et le service des sports sont précieux à l'IUT de Villetaneuse, et c'est donc logiquement que je m'y suis impliqué.",
     },
   ];
 

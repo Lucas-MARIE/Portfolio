@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
             <p style={{ marginBottom: '1.5rem', color: '#7f8c8d' }}>
               Téléchargez mon CV au format PDF pour plus de détails sur mon parcours.
             </p>
-            <CVButton href="/CV_Lucas_MARIE_info_alt.pdf" download="CV_Lucas_MARIE.pdf">
+            <CVButton href="/CV_Lucas_MARIE_info_alt" download="CV_Lucas_MARIE.pdf">
               📄 Télécharger mon CV
             </CVButton>
           </CVSection>
