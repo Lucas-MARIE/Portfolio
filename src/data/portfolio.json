@@ -10,10 +10,10 @@
     "linkedin": "https://www.linkedin.com/in/lucas-marie-60bbb3346"
   },
   "stats": {
-    "projects": 4,
-    "experiences": 3,
+    "projects": 10,
+    "experiences": 4,
     "technologies": 8,
-    "studyYears": "2 + 6"
+    "studyYears": "3 + 6"
   },
   "competences": [
     {
@@ -56,13 +56,15 @@
   "formations": [
     {
       "year": "2024-2026",
-      "title": "BUT Informatique - Parcours Passerelle",
+      "title": "BUT Informatique - Parcours Passerelle informatique et sciences des données",
       "school": "Université Sorbonne Paris Nord - IUT de Villetaneuse",
       "description": "Formation pluridisciplinaire et professionnalisante en informatique, axée sur le développement logiciel et les sciences des données.",
       "details": [
         "Développement web frontend et backend",
         "Gestion de bases de données",
         "Administration système et réseau",
+        "Analyse de données et apprentissage automatique",
+        "Sécurité informatique et protection des données",
         "Gestion de projet agile",
         "Communication professionnelle"
       ],
@@ -101,13 +103,13 @@
     }
   ],
   "justificationBUT": {
-    "title": "Pourquoi le BUT Passerelle ?",
+    "title": "Pourquoi le BUT Informatique ?",
     "content": [
       "Après des étude d'enseignant d'EPS et une expérience de musicien professionnel, ",
       "Cette formation m'a permi d'acquérir des compétences solides en développement d'applications, en analyse de données,",
       "et de façon plus générale un socle pluridisciplinaire (anglais technique, droit du numérique, communication...) propice à une bonne insertion en milieu professionel.",
       "En adoptant une approche méthodologique rigoureuse héritée de ma formation initiale j'ai pu tirer un maximum de profit de cette réorientation.",
-      "Enfin, le stage de fin d'année m'a donné l'opportunité d'approfondir mes connaissances dans une entreprise de renom!"
+      "Mes deux stages chez L'Oréal m'ont donné l'opportunité d'approfondir mes connaissances dans une entreprise de renom!"
     ]
   }
 }

@@ -93,49 +93,24 @@ const Footer: React.FC = () => {
         <FooterSection>
           <h3>À propos</h3>
           <p>
-            Étudiant en 3ème année de BUT Informatique, passionné par le développement
-            web l'inovation et la musique.
+            Étudiant en 3ème année de BUT Informatique, passionné par la science des données, l'inovation et la musique.
           </p>
           <SocialLinks>
-            <SocialLink href="https://github.com" target="_blank" aria-label="GitHub">
+            <SocialLink href="https://github.com/Lucas-MARIE" target="_blank" aria-label="GitHub">
               <img src={githubIcon} alt="GitHub" />
             </SocialLink>
-            <SocialLink href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <SocialLink href="https://www.linkedin.com/in/lucas-marie-60bbb3346" target="_blank" aria-label="LinkedIn">
               <img src={linkedinIcon} alt="LinkedIn" />
               
             </SocialLink>
-            <SocialLink href="mailto:contact@example.com" aria-label="Email">
+            <SocialLink href="mailto:lucasmariepro1@gmail.com" aria-label="Email">
               <img src={mailIcon} alt="Mail" />
             </SocialLink>
           </SocialLinks>
         </FooterSection>
 
-        <FooterSection>
-          <h3>Navigation rapide</h3>
-          <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/formation">Formation</a></li>
-            <li><a href="/experiences">Expériences</a></li>
-            <li><a href="/projets">Projets</a></li>
-            <li><a href="/competences">Compétences</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </FooterSection>
-
-        <FooterSection>
-          <h3>Compétences BUT</h3>
-          <ul>
-            <li>Réaliser - Développement d'applications</li>
-            <li>Optimiser - Performance et qualité</li>
-            <li>Administrer - Systèmes et réseaux</li>
-            <li>Gérer - Données et informations</li>
-            <li>Conduire - Projets informatiques</li>
-            <li>Collaborer - Travail en équipe</li>
-          </ul>
-        </FooterSection>
-
         <Copyright>
-          <p>&copy; 2025 Portfolio BUT Informatique. Tous droits réservés.</p>
+          <p>&copy; 2026 Portfolio BUT Informatique. Tous droits réservés.</p>
         </Copyright>
       </FooterContent>
     </FooterContainer>

@@ -218,9 +218,51 @@ const TechnologyTag = styled.span`
 `;
 
 const Experiences: React.FC = () => {
-  const backgroundImages = [lorealBg, musicBg, epsBg];
+  const backgroundImages = [lorealBg, lorealBg, musicBg, epsBg];
 
 const experiences = [
+    {
+      title: 'Entreprise AI & knowledge management',
+      company: "L'Oréal R&I",
+      period: 'Mars 2026 - Août 2026',
+      description: {
+        missions: [
+          "Conception et évaluation de compagnon LLM (génération de documentation, orchestrateur de wiki type Karpathy)",
+          "Conception d'application html/Js/css de graph de visualisation des dépendances technique et fonctionnelles",
+          "Flux power automate (requête et mise à jour de fichiers, génération de CR de réunion teams)",
+          "Gestion de projet (recueil besoins, brainstorming, présentations des livrables intermédiaires...)"
+        ],
+        context: 'Stage de fin de 3eme année en BUT Informatique dans la continuité de mon premier stage chez L\'Oréal. Conception d\'une suite d\'outils pour améliorer la gouvernance et le framing des projets. Afin de favoriser la transition vers un Software Delivery Life Cycle (SDLC) augmenté par l\'IA, les dépendances entre projets et leur contexte doivent être identifiés et facilement interrogeables.'
+      },
+      competences: [
+        {
+          title: 'Réaliser',
+          description: 'Développement d\'une plateforme multi outils, et des ces sous-modules'
+        },
+        {
+          title: 'Collaborer',
+          description: 'Recueil des besoins, brainstorming, présentations, collaboration avec une équipe de Sapient. Adaptation de la Communication en fonction des différents acteur des projets, notament en anglais'
+        },
+        {
+          title: 'Gérer',
+          description: 'Gestion de documentation confluence, gestion de backlog projet ServiceNow'
+        },
+        { title : 'Conduire', description: 'Phase de framing puis de mise en oeuvre' },
+        { title : 'Optimiser', description: 'Optimisation d\'utilisation de token, temps d\'affichage du graph de dépendance, base de données pour le web' },
+      ],
+      autoEvaluation: {
+        pointsForts: [
+          'Communication efficace avec les équipes',
+          'Capacité d\'adaptation aux besoins des équipes',
+          'Vision transverse des enjeux'
+        ],
+        ameliorations: [
+          'Rencontres avec les personnes recourses pour étandre le réseau de connaissance',
+          'Communication en anglais'
+        ]
+      },
+      technologies: ['html/CSS/JavaScript', 'visNetwork', 'MCP', 'Agent', 'Git/GitHub', 'Power Automate', 'ServiceNow', 'Confluence', 'LLM', 'Python', 'Node.js']
+    },
     {
       title: 'Développeur Full-Stack stagiaire',
       company: "L'Oréal R&I",

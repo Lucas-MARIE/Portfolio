@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
               <InfoContent>
                 <h3>Localisation</h3>
                 <p>{profile.location}</p>
-                <p className="sub-info">Disponible pour déplacements</p>
+                <p className="sub-info">Mobilité ile-de-france</p>
               </InfoContent>
             </InfoItem>
 
@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
               <InfoContent>
                 <h3>Statut</h3>
                 <p>{profile.title}</p>
-                <p className="sub-info">En recherche de stage/alternance</p>
+                <p className="sub-info">En recherche d'alternance pour le Master MLSD de Paris cité Université</p>
               </InfoContent>
             </InfoItem>
           </ContactInfo>
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
             <p style={{ marginBottom: '1.5rem', color: '#7f8c8d' }}>
               Téléchargez mon CV au format PDF pour plus de détails sur mon parcours.
             </p>
-            <CVButton href="/Portfolio/CV_Lucas_MARIE_info_alt.pdf" download="CV_Lucas_MARIE.pdf">
+            <CVButton href="/Portfolio/CV_Master_DataScience_Lucas_MARIE.pdf" download="CV_Master_DataScience_Lucas_MARIE.pdf">
               📄 Télécharger mon CV
             </CVButton>
           </CVSection>

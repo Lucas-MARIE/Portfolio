@@ -284,9 +284,9 @@ const Competences: React.FC = () => {
       subtitle: 'Développement d\'applications informatiques',
       color: '#3498db',
       niveau: 88,
-      itemsIUT: ['JavaScript', 'Java', 'HTML/CSS', 'PHP', 'VS Code', 'Git'],
+      itemsIUT: ['JavaScript', 'Java', 'HTML/CSS', 'PHP', 'VS Code', 'Git', 'Python'],
       itemsStage: ['TypeScript', 'React', 'Dotnet Core', 'esbuild', 'Postman'],
-      itemsPersonnel: [],
+      itemsPersonnel: ['Godot'],
       outils: [
         {
           categorie: 'Langages de programmation',
@@ -309,9 +309,13 @@ const Competences: React.FC = () => {
         {
           title: 'Projets Universitaires',
           description: 'Projets de site web avec base de donnée, et de scapping intelligent avec resumé générés par IA'
+        },
+        {
+          title: 'Projet professionnel chez L\'Oréal',
+          description: 'Développement d\'un outil de génération de composant React avec la GenAI et d\'une plateforme multi-outils pour la gouvernance et le framing des projets'
         }
       ],
-      autoEvaluation: "C'est le genre de compétence qui s'acquiert avec la pratique, et cette année de BUT m'a donné de nombreuses occasions de réaliser des projets concrets. Les enseignants se sont efforcés de nous faire travailler autour de projets réels, ce qui m'a permis d'apprendre à développer une application web basique mais fonctionnelle. Mon stage de deux mois chez L'Oréal m'a donné un aperçu de la manière dont les applications sont développées en entreprise, et j'ai pu approfondir mes connaissances en React, TypeScript et .NET Core. Selon moi, il ne nous a manqué qu'une vision « bout en bout » du développement d'une application, de la conception à la mise en production, pour être pleinement opérationnels dans ce domaine."
+      autoEvaluation: "C'est le genre de compétence qui s'acquiert avec la pratique, et ces deux années de BUT m'ont donné de nombreuses occasions de réaliser des projets concrets. Les enseignants se sont efforcés de nous faire travailler autour de projets réels, ce qui m'a permis d'apprendre à développer une application web basique mais fonctionnelle. Mon stage de deux mois chez L'Oréal m'a donné un aperçu de la manière dont les applications sont industrialisées en entreprise, et j'ai pu approfondir mes connaissances en React, TypeScript et .NET Core. Mon deuxième stage chez L'Oréal m'a permis de vivre tout le cycle de vie d\'un projet, de son idéation à sa production, et c'est justement un point qui peut être amélioré dans la formation BUT."
     },
     {
       id: 'optimiser',
@@ -319,8 +323,8 @@ const Competences: React.FC = () => {
       subtitle: 'Performance et qualité du code',
       color: '#80e4b2',
       niveau: 90,
-      itemsIUT: ['Python', 'Algèbre', 'Cryptographie'],
-      itemsStage: ['SOnnarQube', 'MCP Context7', 'Normes REST', 'Principes SOLID'],
+      itemsIUT: ['Python', 'Algèbre', 'Cryptographie', 'Algorithmes', 'Structures de données', 'clean code', 'Test unitaire'],
+      itemsStage: ['SOnnarQube','Wiki LLM', 'Normes REST', 'Principes SOLID'],
       itemsPersonnel: [],
       outils: [
         {
@@ -342,11 +346,11 @@ const Competences: React.FC = () => {
           description: 'Utilisation de Python pour le traitement de texte et l\'analyse de données'
         },
         {
-          title: 'Sondage sur les anciens élèves',
-          description: 'Création d\'un questionnaire et analyse des résultats avec Python, pandas et matplotlib'
+          title: 'Optimisation d\'une application mobile',
+          description: 'Amélioration des performances et de la qualité du code d\'une application mobile en mesurant les temps de réponse et en choisissant pertinamant les algorithmes et structures de données'
         },
       ],
-      autoEvaluation: "L'étude des structures de données et de la complexité algorithmique m'a permis de mieux comprendre comment écrire du code efficace et maintenable. J'ai appris à utiliser des outils comme SonarQube pour analyser la qualité de mon code et identifier les points d'amélioration lors de mon stage. Une autre bonne pratique que j'ai mise en place est de lire du code de qualité, et je trouve qu'on aurait pu y être davantage encouragés à l'IUT. Mention spéciale tout de même pour le projet autour du jeu vidéo Balatro, que nous devions reprogrammer, ce qui nous a donné une base de code à étudier."
+      autoEvaluation: "L'étude des structures de données, de la complexité algorithmique et du clean code m'a permis de mieux comprendre comment écrire du code efficace et maintenable. J'ai appris à utiliser des outils comme SonarQube pour analyser la qualité de mon code et identifier les points d'amélioration lors de mon stage. Une autre bonne pratique que j'ai mise en place est de lire du code de qualité, et je trouve qu'on aurait pu y être davantage encouragés à l'IUT. Mention spéciale tout de même pour le projet autour du jeu vidéo Balatro, que nous devions reprogrammer, ce qui nous a donné une base de code à étudier."
     },
     {
       id: 'administrer',
@@ -354,8 +358,8 @@ const Competences: React.FC = () => {
       subtitle: 'Systèmes et réseaux',
       color: '#dbdd52',
       niveau: 84,
-      itemsIUT: ['Bash'],
-      itemsStage: ['Kubernetes', 'Docker', 'Azure', 'CI/CD'],
+      itemsIUT: ['Bash', 'Docker'],
+      itemsStage: ['Kubernetes', 'Azure', 'CI/CD'],
       itemsPersonnel: [],
       outils: [
         {
@@ -382,7 +386,7 @@ const Competences: React.FC = () => {
       color: '#eb7e99',
       niveau: 85,
       itemsIUT: ['SQL', 'Statistiques', 'Probabilités', 'R', "Test d'hypothèse"],
-      itemsStage: ['CosmosDB', 'CI/CD'],
+      itemsStage: ['CosmosDB', 'CI/CD', 'APM/CMDB', 'Power BI'],
       itemsPersonnel: [],
       outils: [
         {
@@ -404,7 +408,7 @@ const Competences: React.FC = () => {
           description: 'Utilisation de R pour analyser et visualiser des résultats, idem avec pandas et matplotlib en Python'
         },
       ],
-      autoEvaluation: "La gestion des données, et par conséquent l'analyse de ces données, est une compétence que j'ai particulièrement appréciée développer. Les bases théoriques apportées en probabilité et en algèbre m'ont permis d'atteindre un niveau de maîtrise satisfaisant pour appréhender sereinement le monde de la data science.",
+      autoEvaluation: "La gestion des données, et par conséquent l'analyse de ces données, est une compétence que j'ai particulièrement appréciée développer. Les bases théoriques apportées en probabilité et en algèbre m'ont permis d'atteindre un niveau de maîtrise satisfaisant pour appréhender sereinement le monde de la data science. C'est pourquoi je poursuis ma formation en master de Machine Learning pour la Science des Données.",
     },
     {
       id: 'conduire',
@@ -413,7 +417,7 @@ const Competences: React.FC = () => {
       color: '#db6334',
       niveau: 86,
       itemsIUT: ['Klaxoon', 'UML', 'git hub'],
-      itemsStage: ['Agile', 'CI/CD'],
+      itemsStage: ['Agile', 'CI/CD', 'Teams', 'ServiceNow', 'Wiki LLM', 'Confluence'],
       itemsPersonnel: ['Eisenhower Matrix'],
       outils: [
         {
@@ -434,8 +438,16 @@ const Competences: React.FC = () => {
           title: 'Gestion du temps et des priorités en multiprojet',
           description: 'Répartition du temps entre les projets universitaires, le stage, et les projets personnels'
         },
+        {
+          title: 'Wiki LLM',
+          description: 'Mise en place d\'un outil de gestion de contexte projet via LLM pour la conduite de projet chez L\'Oréal'
+        },
+        {
+          title: 'BluePrint Project',
+          description: 'Plateforme multi-outils pour la gouvernance et le framing des projets chez L\'Oréal'
+        }
       ],
-      autoEvaluation: "Cette année de reconversion a été intense, mais j'ai pu équilibrer mon rythme d'étude avec mes projets personnels (sport et loisirs). Le stage est arrivé au meilleur moment pour consolider mes apprentissages, et ma conduite de projet a été sollicitée à court terme lors des révisions pour le contrôle continu, à moyen terme pour les projets universitaires, et à plus long terme en ayant l'opportunité d'effectuer un stage qui lie ma 2ᵉ et 3ᵉ année entre elles. Mon point faible étant l'anticipation, j'ai choisi pour cette année « passerelle » de suivre le conseil de mon professeur de maths : « sois à fond tout le temps ! »",
+      autoEvaluation: "Ma deuxième année de BUT a été intense, mais j'ai pu équilibrer mon rythme d'étude avec mes projets personnels (sport et loisirs). Le stage est arrivé au meilleur moment pour consolider mes apprentissages, et ma conduite de projet a été sollicitée à court terme lors des révisions pour le contrôle continu, à moyen terme pour les projets universitaires, et à plus long terme en ayant l'opportunité d'effectuer un stage qui lie ma 2ᵉ et 3ᵉ année entre elles. Mon point faible étant l'anticipation, j'ai choisi pour cette année « passerelle » de suivre le conseil de mon professeur de maths : « sois à fond tout le temps ! ». En BUT 3 j'ai eu la chance de faire mon stage de fin d'étude à nouveau chez L'Oréal mais pour une durée de 6 mois. J'ai donc eu le temps de faire de la gestion de projet et j'ai également travaillé sur un outil d'optimisation de gestion de contexte projet : Wiki LLM",
     },
 
     {
@@ -472,10 +484,10 @@ const Competences: React.FC = () => {
         },
         {
           title: 'Projets de groupe',
-          description: 'Plusieurs projets réalisés en équipe de 2 à 4 personnes.'
+          description: 'Plusieurs projets réalisés en équipe de 2 à 15 personnes.'
         },
       ],
-      autoEvaluation: "J'ai particulièrement aimé collaborer avec mes camarades, aussi bien pour les projets universitaires que pour la vie de classe au quotidien. S'ajoutant aux nombreux cours pertinents, notamment en communication, je me dois également de mentionner ici que la vie étudiante sur le campus renforce l'envie de s'investir collectivement dans un parcours de formation exigeant. Le BDE et le service des sports sont précieux à l'IUT de Villetaneuse, et c'est donc logiquement que je m'y suis impliqué.",
+      autoEvaluation: "J'ai particulièrement aimé collaborer avec mes camarades, aussi bien pour les projets universitaires que pour la vie de classe au quotidien. Je me dois également de mentionner ici que la vie étudiante sur le campus renforce l'envie de s'investir collectivement dans un parcours de formation exigeant. Le BDE et le service des sports sont précieux à l'IUT de Villetaneuse, et c'est donc logiquement que je m'y suis impliqué. Des évènement comme la nuit de l'info ou les workshop pizzAI m'ont également permis de collaborer au sein de plus grandes équipes (15+ personnes)",
     },
   ];
 

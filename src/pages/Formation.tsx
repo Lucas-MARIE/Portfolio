@@ -221,7 +221,7 @@ const logoMap = {
             <TimelineItem key={index} $isLeft={formation.position === 'left'}>
               <TimelineYear>{formation.year}</TimelineYear>
               <TimelineDot />
-              <TimelineContent $isLeft={formation.position === 'left'}>
+              <TimelineContent $isLeft={formation.position === 'right'}>
                 <FormationLogo
                   src={getFormationLogo(formation.school)}
                   alt={`${formation.school} logo`}
